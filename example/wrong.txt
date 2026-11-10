@@ -1,0 +1,6 @@
+boot
+wait 100
+press START 4
+mark before 0xc100 6
+wait 10
+measure wrong_duration from before expect 11

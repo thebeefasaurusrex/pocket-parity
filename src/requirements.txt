@@ -1,0 +1,5 @@
+pyboy==2.9.0
+numpy==2.5.4
+PySDL2==0.9.17
+pysdl2-dll==2.32.10
+Pillow==12.2.0

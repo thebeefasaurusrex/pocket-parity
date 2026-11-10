@@ -1,0 +1,34 @@
+# The 100 frame warmup covers both emulators' startup paths.
+boot
+wait 100
+press START 4
+expect ram[0xc100] == 1
+expect ram[0xc105] == 1
+read 0xc100 6
+mark start 0xc100 6
+snap start
+hold RIGHT 30
+expect ram[0xc103] == 54
+wait 1
+oam 0 1
+tiles 0x9800 2 2
+snap moved
+press A 4
+expect ram[0xc104] == 4
+save mid
+hold RIGHT 10
+expect ram[0xc103] == 64
+load mid
+expect ram[0xc103] == 54
+until ram[0xc101] == 1 max 30
+measure first_second from start expect 59
+mark first_second 0xc100 6
+diff ram start..first_second
+watch 0xc101 for 121
+wait 1917
+expect ram[0xc102] == 0
+until ram[0xc102] == 1 max 4
+measure phase_change from start expect 2099
+expect ram[0xc101] == 35
+snap phase
+log finished

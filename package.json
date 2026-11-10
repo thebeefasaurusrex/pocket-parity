@@ -1,0 +1,25 @@
+{
+  "name": "pocket-parity",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "pocket-parity": "bin/pocket-parity.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "example/timing.c",
+    "example/timing.txt",
+    "example/wrong.txt"
+  ],
+  "license": "Apache-2.0"
+}
